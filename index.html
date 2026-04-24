@@ -418,6 +418,23 @@
     max-width: 720px;
   }
 
+  .project-body a.footnote-link {
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--ink-muted);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .project-body a.footnote-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .project-body sup {
+    font-size: 0.65em;
+    color: var(--ink-muted);
+  }
+
   .project-metrics {
     display: flex;
     gap: 48px;
@@ -446,6 +463,311 @@
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--ink-muted);
+  }
+
+  /* ——— TESTIMONIAL ——— */
+  .testimonial {
+    margin-top: 36px;
+    padding: 32px 36px;
+    background: rgba(212, 165, 116, 0.04);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    max-width: 720px;
+  }
+
+  .testimonial-quote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+
+  .testimonial-quote::before {
+    content: "\201C";
+    color: var(--accent);
+    font-weight: 500;
+    margin-right: 2px;
+  }
+
+  .testimonial-quote::after {
+    content: "\201D";
+    color: var(--accent);
+    font-weight: 500;
+    margin-left: 2px;
+  }
+
+  .testimonial-attribution {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+
+  .testimonial-attribution strong {
+    color: var(--ink-soft);
+    font-weight: 600;
+  }
+
+  /* ——— PRICING ——— */
+  .pricing {
+    padding: 100px 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .pricing-intro {
+    margin-bottom: 72px;
+    max-width: 760px;
+  }
+
+  .pricing h2 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .pricing-sub {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 0.85fr;
+    gap: 28px;
+    margin-bottom: 56px;
+    align-items: stretch;
+  }
+
+  .tier {
+    position: relative;
+    background: var(--bg-alt);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 40px 32px 36px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tier:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  }
+
+  .tier-featured {
+    background: linear-gradient(180deg, rgba(212, 165, 116, 0.06) 0%, var(--bg-alt) 70%);
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(212, 165, 116, 0.12);
+  }
+
+  .tier-featured:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(212, 165, 116, 0.2);
+  }
+
+  .tier-badge {
+    position: absolute;
+    top: -11px;
+    left: 32px;
+    background: var(--accent);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 2px;
+  }
+
+  .tier-name {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+  }
+
+  .tier-price {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 2.8rem;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 4px;
+  }
+
+  .tier-price-unit {
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    font-style: italic;
+    font-family: 'Lora', serif;
+    margin-left: 2px;
+  }
+
+  .tier-tagline {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-top: 16px;
+    margin-bottom: 20px;
+  }
+
+  .tier-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 24px;
+  }
+
+  .tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 28px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+
+  .tier-features li {
+    position: relative;
+    padding-left: 24px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  .tier-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 10px;
+    height: 1px;
+    background: var(--accent);
+  }
+
+  .tier-note {
+    font-size: 12px;
+    color: var(--ink-muted);
+    font-style: italic;
+    line-height: 1.5;
+    margin-top: auto;
+  }
+
+  /* Add-on card variant — physically smaller, lighter, with overhead label */
+  .tier-addon {
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 32px 26px 30px;
+  }
+
+  .tier-addon::before {
+    content: "Add to either build";
+    position: absolute;
+    top: -10px;
+    left: 26px;
+    background: var(--bg);
+    color: var(--accent);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0 10px;
+  }
+
+  .tier-addon .tier-price {
+    font-size: 2.4rem;
+  }
+
+  .tier-addon .tier-features li {
+    font-size: 13px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+
+  .pricing-cta {
+    text-align: center;
+  }
+
+  /* ——— WHAT'S INCLUDED ——— */
+  .included {
+    padding: 100px 0;
+    background: var(--bg-alt);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .included-intro {
+    margin-bottom: 64px;
+    max-width: 760px;
+  }
+
+  .included h2 {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+
+  .included-sub {
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 48px;
+  }
+
+  .feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+
+  .feature-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    stroke: var(--accent);
+    stroke-width: 1.5;
+    fill: none;
+  }
+
+  .feature-text h3 {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .feature-text p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
   }
 
   /* ——— HOW IT WORKS ——— */
@@ -725,6 +1047,24 @@
       gap: 40px;
     }
 
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .tier-featured {
+      order: -1;
+    }
+
+    .tier-addon {
+      padding: 32px 24px 28px;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
     .provide-list {
       grid-template-columns: 1fr;
     }
@@ -789,7 +1129,7 @@
       filter: blur(70px);
     }
 
-    .work, .how, .about {
+    .work, .how, .about, .pricing, .included {
       padding: 72px 0;
     }
 
@@ -896,7 +1236,7 @@
 <section class="hero">
   <div class="hero-aurora"><div class="aurora-3"></div></div>
   <div class="container">
-    <div class="hero-eyebrow">Real Estate Web Design · Limited Pilot Program</div>
+    <div class="hero-eyebrow">Real Estate Web Design</div>
     <h1>I designed websites for <em>Babcock Ranch</em> and <em>GL Homes</em>.<br>Now for realtors.</h1>
     <p class="hero-sub">Senior-level design work. Live in under a week.</p>
     <a href="https://fantastical.app/Namnum/Intro-conversation" target="_blank" rel="noopener" class="cta-button">Book a call</a>
@@ -966,17 +1306,193 @@
         <p class="project-body">A full redesign of GL Homes' corporate website, rebuilt around how buyers actually shop for homes. The new site gave the team a scalable foundation they've been building on ever since.</p>
         <div class="project-metrics">
           <div class="metric">
-            <span class="metric-number" data-counter data-target="30" data-suffix="%">0%</span>
+            <span class="metric-number">30%</span>
             <span class="metric-label">Lift in lead submissions</span>
           </div>
           <div class="metric">
-            <span class="metric-number" data-counter data-target="80" data-suffix="%">0%</span>
+            <span class="metric-number">80%</span>
             <span class="metric-label">Lift in mobile engagement</span>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- STEPHANIE KAUFMAN -->
+    <div class="project" data-reveal>
+      <div class="project-showcase">
+        <div class="browser-frame">
+          <div class="browser-bar">
+            <div class="browser-dots">
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+              <span class="browser-dot"></span>
+            </div>
+            <div class="browser-url">stephaniekaufman.com</div>
+          </div>
+          <div class="browser-screen">
+            <img src="images/stephanie-desktop.jpg" alt="Stephanie Kaufman website on desktop">
+          </div>
+        </div>
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="images/stephanie-mobile.jpg" alt="Stephanie Kaufman website on mobile">
+          </div>
+        </div>
+      </div>
+      <div class="project-info">
+        <h3 class="project-title"><span class="project-client">Stephanie Kaufman, Lang Realty</span><br>A Luxury Presence That Finally Matches the Agent Behind It</h3>
+        <p class="project-body">Stephanie has built her reputation on 26 years of Boca Raton market expertise and a client list that runs almost entirely on referrals. Her old site didn't reflect any of that. It was dated, missing clear calls to action, and wasn't built for mobile, which is where <a href="https://www.nar.realtor/research-and-statistics/research-reports/highlights-from-the-profile-of-home-buyers-and-sellers" target="_blank" rel="noopener" class="footnote-link">70% of home buyers start their search</a> today. Every one of those visits was a lead she was quietly losing.</p>
+        <p class="project-body">The new site is mobile-first from the ground up, with a lead capture pop-up, clear next steps on every page, and a luxury presentation that matches the caliber of clients she works with. The kind of site that makes a referral feel like a no-brainer the moment they land on it.</p>
+
+        <!-- TESTIMONIAL BLOCK — Ready for copy. Uncomment when Stephanie provides her actual words. -->
+        <!--
+        <div class="testimonial">
+          <p class="testimonial-quote">My business runs on referrals, so my website needed to match the experience my clients actually get. Danny understood that immediately. The new site feels like me, works the way my buyers actually shop, and the lead capture alone has already changed how inquiries come in.</p>
+          <p class="testimonial-attribution"><strong>Stephanie Kaufman</strong> · Lang Realty, Boca Raton</p>
+        </div>
+        -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ——— PRICING ——— -->
+<section class="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <div class="pricing-intro" data-reveal>
+      <h2>Luxury-level design, without the luxury lock-in.</h2>
+      <p class="pricing-sub">Pick the build that fits where you are. Add ongoing support if you want it.</p>
+    </div>
+
+    <div class="pricing-grid" data-reveal>
+
+      <div class="tier">
+        <div class="tier-name">Quick Start</div>
+        <div class="tier-price">$500</div>
+        <p class="tier-tagline">One custom landing page, live in 24 to 48 hours.</p>
+        <p class="tier-desc">For agents who need a professional online presence, fast. No multi-month build. No drawn-out process. One page, done well, ready to send to leads by the end of the week.</p>
+        <ul class="tier-features">
+          <li>Custom designed landing page</li>
+          <li>Mobile-first and lead-capture ready</li>
+          <li>Live on your domain</li>
+          <li>You own it, 100%</li>
+        </ul>
+      </div>
+
+      <div class="tier tier-featured">
+        <span class="tier-badge">Most Popular</span>
+        <div class="tier-name">Growth Accelerator</div>
+        <div class="tier-price">$1,500</div>
+        <p class="tier-tagline">A full 5-page site, built to generate leads.</p>
+        <p class="tier-desc">For agents ready to go beyond a single page. Built around how buyers actually shop, with the pages that matter most and a lead capture flow designed to convert, not just decorate.</p>
+        <ul class="tier-features">
+          <li>Listing showcase</li>
+          <li>Lead capture built into every page</li>
+          <li>About page and neighborhood or market page</li>
+          <li>Live in 1 to 2 weeks</li>
+          <li>You own it, 100%</li>
+        </ul>
+      </div>
+
+      <div class="tier tier-addon">
+        <div class="tier-name">Elite Partner</div>
+        <div class="tier-price">$300<span class="tier-price-unit">/mo</span></div>
+        <p class="tier-tagline">Ongoing growth, not just maintenance.</p>
+        <p class="tier-desc">For agents who want their site working for their business every month. Regular updates, performance tuning, and strategy calls to keep it pulling its weight as your business grows.</p>
+        <ul class="tier-features">
+          <li>Monthly content and listing updates</li>
+          <li>Performance optimization</li>
+          <li>Monthly strategy calls</li>
+          <li>Cancel anytime, site stays live</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pricing-cta">
+      <a href="https://fantastical.app/Namnum/Intro-conversation" target="_blank" rel="noopener" class="cta-button">Book a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- ——— WHAT'S INCLUDED ——— -->
+<section class="included">
+  <div class="container">
+    <div class="section-label">What's Included</div>
+    <div class="included-intro" data-reveal>
+      <h2>The basics, handled.</h2>
+      <p class="included-sub">Every site ships with what modern real estate websites actually need.</p>
+    </div>
+
+    <div class="features-grid" data-reveal>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="6" y="3" width="12" height="18" rx="2" stroke-linejoin="round"/>
+          <line x1="11" y1="18" x2="13" y2="18" stroke-linecap="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>Mobile-first design</h3>
+          <p>Your site looks and works perfectly on phones. That matters, because most home buyers start their search there.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 8l9 6 9-6M3 8v10a2 2 0 002 2h14a2 2 0 002-2V8M3 8l2-2h14l2 2" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>Lead capture built in</h3>
+          <p>Contact forms and calls-to-action designed to turn visitors into inquiries, not just page views.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 10l9-7 9 7v10a2 2 0 01-2 2h-4v-7H10v7H5a2 2 0 01-2-2V10z" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>Listing showcase</h3>
+          <p>Your properties presented the way they deserve to be, front and center.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round" stroke-linecap="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>Fast load speed</h3>
+          <p>Built on modern infrastructure, not a bloated theme that takes six seconds to open on a phone.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke-linejoin="round"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke-linecap="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>SEO-ready</h3>
+          <p>Clean code and proper structure so you can actually rank in local searches.</p>
+        </div>
+      </div>
+
+      <div class="feature">
+        <svg class="feature-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="10" width="16" height="11" rx="1" stroke-linejoin="round"/>
+          <path d="M8 10V7a4 4 0 018 0v3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="feature-text">
+          <h3>Full ownership</h3>
+          <p>You own the code, the domain, all of it. No platform lock-in. No monthly hostage fees.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -1028,7 +1544,7 @@
       <div class="about-content">
         <h2>I've spent 15+ years designing websites for major real estate developers.</h2>
         <p><em>Babcock Ranch. GL Homes. Lennar.</em> Engagements that ranged from six figures to $2M+ corporate redesigns.</p>
-        <p>I'm running a limited pilot program that brings the same senior design quality to individual realtors, at a fraction of the cost, and on a timeline that actually fits how you work.</p>
+        <p>Now I'm bringing that same senior design quality to individual realtors, on a timeline that actually fits how you work.</p>
         <div class="about-links">
           <a href="https://www.linkedin.com/in/dannynamnum/" target="_blank" rel="noopener" class="about-link">LinkedIn</a>
           <a href="https://namnum.net" target="_blank" rel="noopener" class="about-link">Full portfolio</a>
@@ -1079,11 +1595,7 @@
     var revealables = document.querySelectorAll('[data-reveal], [data-reveal-stagger]');
 
     if (reduced) {
-      // Show everything immediately if user prefers reduced motion
       revealables.forEach(function(el) { el.classList.add('is-visible'); });
-      document.querySelectorAll('[data-counter]').forEach(function(el) {
-        el.textContent = el.dataset.target + (el.dataset.suffix || '');
-      });
       return;
     }
 
@@ -1091,38 +1603,12 @@
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-visible');
-          // Trigger counters inside this element
-          var counters = entry.target.querySelectorAll('[data-counter]');
-          counters.forEach(animateCounter);
           observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
     revealables.forEach(function(el) { observer.observe(el); });
-
-    // Counter animation
-    function animateCounter(el) {
-      if (el.dataset.counted) return;
-      el.dataset.counted = '1';
-      var target = parseInt(el.dataset.target, 10);
-      var suffix = el.dataset.suffix || '';
-      var duration = 1500;
-      var startTime = null;
-
-      function step(ts) {
-        if (!startTime) startTime = ts;
-        var elapsed = ts - startTime;
-        var progress = Math.min(elapsed / duration, 1);
-        // Ease-out cubic for natural deceleration
-        var eased = 1 - Math.pow(1 - progress, 3);
-        var value = Math.round(target * eased);
-        el.textContent = value + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      }
-
-      requestAnimationFrame(step);
-    }
   })();
 </script>
 
