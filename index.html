@@ -207,6 +207,145 @@
     border-top: 1px solid var(--line);
   }
 
+  /* ——— Paired compact projects (Babcock + GL Homes) ——— */
+  .projects-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  .projects-pair-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .projects-pair-label::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--ink-muted);
+  }
+
+  .project-compact {
+    background: linear-gradient(135deg, var(--bg-alt) 0%, var(--bg) 100%);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .project-compact-screen {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.4),
+      0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .project-compact-screen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .project-compact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project-compact-client {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--accent);
+    font-size: 1.15rem;
+    letter-spacing: 0.01em;
+  }
+
+  .project-compact-title {
+    font-family: 'Lora', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.3;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .project-compact-meta {
+    display: flex;
+    gap: 24px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+
+  .project-compact-metric {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .project-compact-metric-num {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+
+  .project-compact-metric-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .project-compact-tagline {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-top: 4px;
+  }
+
+  /* Featured anchor project label */
+  .featured-project-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 56px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .featured-project-label::before {
+    content: "";
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--ink-muted);
+  }
+
   .project {
     margin-bottom: 120px;
   }
@@ -1005,6 +1144,15 @@
 
   /* ——— RESPONSIVE ——— */
   @media (max-width: 860px) {
+    .projects-pair {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .featured-project-label {
+      margin-top: 40px;
+    }
+
     .steps {
       grid-template-columns: 1fr;
       gap: 40px;
@@ -1201,75 +1349,45 @@
   <div class="container">
     <div class="section-label">Recent Work</div>
 
-    <!-- BABCOCK RANCH -->
-    <div class="project" data-reveal>
-      <div class="project-showcase">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots">
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
+    <!-- BABCOCK + GL HOMES (paired compact) -->
+    <div class="projects-pair-label">Past projects</div>
+    <div class="projects-pair" data-reveal>
+
+      <div class="project-compact">
+        <div class="project-compact-screen">
+          <img src="images/babcock-desktop.jpg" alt="Babcock Ranch website">
+        </div>
+        <div class="project-compact-info">
+          <span class="project-compact-client">Babcock Ranch</span>
+          <h3 class="project-compact-title">A website that sells the lifestyle, not just the listings.</h3>
+          <p class="project-compact-tagline">Full redesign for one of Florida's most distinctive master-planned communities.</p>
+        </div>
+      </div>
+
+      <div class="project-compact">
+        <div class="project-compact-screen">
+          <img src="images/glhomes-desktop.jpg" alt="GL Homes website">
+        </div>
+        <div class="project-compact-info">
+          <span class="project-compact-client">GL Homes</span>
+          <h3 class="project-compact-title">A corporate site that works as hard as the sales team.</h3>
+          <div class="project-compact-meta">
+            <div class="project-compact-metric">
+              <span class="project-compact-metric-num">30%</span>
+              <span class="project-compact-metric-label">Lift in lead submissions</span>
             </div>
-            <div class="browser-url">babcockranch.com</div>
-          </div>
-          <div class="browser-screen">
-            <img src="images/babcock-desktop.jpg" alt="Babcock Ranch website on desktop">
-          </div>
-        </div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="images/babcock-mobile.jpg" alt="Babcock Ranch website on mobile">
+            <div class="project-compact-metric">
+              <span class="project-compact-metric-num">80%</span>
+              <span class="project-compact-metric-label">Lift in mobile engagement</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="project-info">
-        <h3 class="project-title"><span class="project-client">Babcock Ranch</span><br>A Website That Sells the Lifestyle, Not Just the Listings</h3>
-        <p class="project-body">A full redesign for one of Florida's most distinctive master-planned communities. The new site brought in higher-quality leads, stronger mobile conversions, and better engagement across the board. The client renewed for ongoing maintenance and brought me back to design a luxury campaign for their next buyer segment.</p>
-      </div>
+
     </div>
 
-    <!-- GL HOMES -->
-    <div class="project" data-reveal>
-      <div class="project-showcase">
-        <div class="browser-frame">
-          <div class="browser-bar">
-            <div class="browser-dots">
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-              <span class="browser-dot"></span>
-            </div>
-            <div class="browser-url">glhomes.com</div>
-          </div>
-          <div class="browser-screen">
-            <img src="images/glhomes-desktop.jpg" alt="GL Homes website on desktop">
-          </div>
-        </div>
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <img src="images/glhomes-mobile.jpg" alt="GL Homes website on mobile">
-          </div>
-        </div>
-      </div>
-      <div class="project-info">
-        <h3 class="project-title"><span class="project-client">GL Homes</span><br>A Corporate Site That Works as Hard as the Sales Team</h3>
-        <p class="project-body">A full redesign of GL Homes' corporate website, rebuilt around how buyers actually shop for homes. The new site gave the team a scalable foundation they've been building on ever since.</p>
-        <div class="project-metrics">
-          <div class="metric">
-            <span class="metric-number">30%</span>
-            <span class="metric-label">Lift in lead submissions</span>
-          </div>
-          <div class="metric">
-            <span class="metric-number">80%</span>
-            <span class="metric-label">Lift in mobile engagement</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- STEPHANIE KAUFMAN -->
+    <!-- STEPHANIE KAUFMAN (featured anchor) -->
+    <div class="featured-project-label">Built for a realtor like you</div>
     <div class="project" data-reveal>
       <div class="project-showcase">
         <div class="browser-frame">
