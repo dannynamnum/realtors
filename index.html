@@ -51,82 +51,41 @@
     overflow: hidden;
   }
 
-  .hero-aurora {
+  .hero-video-wrap {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-    z-index: 0;
     overflow: hidden;
+    z-index: 0;
+    background: var(--bg-deep);
   }
 
-  .hero-aurora::before,
-  .hero-aurora::after,
-  .hero-aurora > .aurora-3 {
-    content: "";
+  .hero-video {
     position: absolute;
-    border-radius: 50%;
-    filter: blur(90px);
-    will-change: transform, opacity;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    pointer-events: none;
+    /* Subtle warm tone-mapping that ties video into the gold-on-dark palette */
+    filter: brightness(0.85) saturate(1.05);
   }
 
-  /* Primary blob — warm gold, largest, main presence */
-  .hero-aurora::before {
-    width: 60%;
-    height: 100%;
-    top: -15%;
-    right: -8%;
-    background: radial-gradient(circle at center, rgba(220, 170, 110, 0.95) 0%, rgba(212, 165, 116, 0.35) 35%, transparent 65%);
-    opacity: 0.85;
-    animation: aurora-drift-1 22s ease-in-out infinite alternate;
-  }
-
-  /* Secondary blob — cooler lavender-gold, offset */
-  .hero-aurora::after {
-    width: 45%;
-    height: 75%;
-    top: 15%;
-    right: 8%;
-    background: radial-gradient(circle at center, rgba(190, 140, 210, 0.55) 0%, rgba(212, 165, 116, 0.25) 50%, transparent 75%);
-    opacity: 0.65;
-    animation: aurora-drift-2 28s ease-in-out infinite alternate;
-    animation-delay: -8s;
-  }
-
-  /* Third blob — smaller warm ember, deeper accent */
-  .hero-aurora .aurora-3 {
-    width: 35%;
-    height: 55%;
-    bottom: 0;
-    right: 25%;
-    background: radial-gradient(circle at center, rgba(230, 150, 90, 0.45) 0%, rgba(212, 165, 116, 0.15) 55%, transparent 80%);
-    opacity: 0.55;
-    animation: aurora-drift-3 25s ease-in-out infinite alternate;
-    animation-delay: -14s;
-  }
-
-  @keyframes aurora-drift-1 {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0.75; }
-    50%  { transform: translate(-14%, 8%) scale(1.15); opacity: 1.0; }
-    100% { transform: translate(6%, -5%) scale(0.92); opacity: 0.7; }
-  }
-
-  @keyframes aurora-drift-2 {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0.5; }
-    50%  { transform: translate(10%, -12%) scale(1.2); opacity: 0.8; }
-    100% { transform: translate(-8%, 10%) scale(0.88); opacity: 0.45; }
-  }
-
-  @keyframes aurora-drift-3 {
-    0%   { transform: translate(0, 0) scale(1); opacity: 0.5; }
-    50%  { transform: translate(-12%, -8%) scale(1.25); opacity: 0.7; }
-    100% { transform: translate(8%, 6%) scale(0.95); opacity: 0.4; }
+  .hero-video-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(10, 13, 20, 0.85) 0%, rgba(21, 24, 33, 0.55) 50%, rgba(21, 24, 33, 0.45) 100%),
+      linear-gradient(180deg, rgba(21, 24, 33, 0.2) 0%, rgba(21, 24, 33, 0.5) 100%);
+    pointer-events: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-aurora::before,
-    .hero-aurora::after,
-    .hero-aurora .aurora-3 {
-      animation: none;
+    .hero-video {
+      display: none;
     }
   }
 
@@ -1108,31 +1067,6 @@
       padding: 56px 0 72px;
     }
 
-    /* On mobile, aurora covers more area and is less intense so it reads as ambient not distracting */
-    .hero-aurora::before {
-      width: 90%;
-      height: 80%;
-      top: -20%;
-      right: -20%;
-      filter: blur(70px);
-    }
-
-    .hero-aurora::after {
-      width: 70%;
-      height: 60%;
-      top: 10%;
-      right: -10%;
-      filter: blur(70px);
-    }
-
-    .hero-aurora .aurora-3 {
-      width: 60%;
-      height: 45%;
-      bottom: -10%;
-      right: 5%;
-      filter: blur(70px);
-    }
-
     .work, .how, .about, .pricing, .included {
       padding: 72px 0;
     }
@@ -1246,7 +1180,13 @@
 
 <!-- ——— HERO ——— -->
 <section class="hero">
-  <div class="hero-aurora"><div class="aurora-3"></div></div>
+  <!-- TODO: This video is using an iStock PREVIEW file (unlicensed). License before going live or replace with owned footage. -->
+  <div class="hero-video-wrap">
+    <video class="hero-video" autoplay loop muted playsinline poster="images/hero-poster.jpg">
+      <source src="images/hero-video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
   <div class="container">
     <div class="hero-eyebrow">Real Estate Web Design</div>
     <h1>I designed websites for<br class="hero-break-1"><span class="nowrap-pair"><em>Babcock Ranch</em> and <em>GL Homes</em>.</span><br>Now for realtors.</h1>
